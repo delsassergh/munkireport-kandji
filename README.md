@@ -1,6 +1,11 @@
 Kandji module
 ==============
 
+> [!WARNING]
+> I no longer have access to a Kandji instance of my own. 
+> I will continue to attempt to fix reported bugs based off of API documentation/error output, it is unlikely that new features will be added.
+> Feel free to fork this repo and make your own improvements, if you want to.
+
 Kandji integration for MunkiReport. Based heavily on [tuxudo/jamf](https://github.com/tuxudo/jamf), which was a massive influence and motivation to write this module.
 
 The Kandji Admin tab within the Admin dropdown menu allows an administrator to check if MunkiReport is able to access their Kandji instance, as well as some details as to how it is configured. There is the option to manually pull data for all Macs within MunkiReport. 
