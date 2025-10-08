@@ -3,7 +3,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-class Kandji extends Migration
+class KandjiInitial extends Migration
 {
     private $tableName = 'kandji';
     
