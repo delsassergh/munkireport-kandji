@@ -53,7 +53,7 @@ def get_passport_info():
 def main():
     """Main"""
 
-    if not os.path.isfile('/Library/Kandji/Kandji Agent.app/Contents/MacOS/kandji-cli'):
+    if not os.path.isfile('/usr/local/bin/kandji'):
         print("ERROR: The Kandji agent is not installed")
         exit(0)
 
