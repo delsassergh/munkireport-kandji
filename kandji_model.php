@@ -23,5 +23,9 @@ class Kandji_model extends Eloquent
       'email_address',
       'passport_enabled',
       'passport_users',
+      // v3.0 — new fields from Iru/Kandji agent v5.x+ local preferences
+      'company',
+      'last_report',
+      'last_status',
     ];
 }

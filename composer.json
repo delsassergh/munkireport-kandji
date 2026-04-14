@@ -1,5 +1,6 @@
 {
-    "name": "jc0b/kandji",
-    "description": "Kandji module for munkireport.",
+    "name": "delsassergh/kandji",
+    "description": "Kandji module for MunkiReport — v3.0. Maintained fork with Iru agent support.",
+    "version": "3.0.0",
     "license": "MIT"
 }
