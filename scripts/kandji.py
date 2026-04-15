@@ -13,7 +13,9 @@ import plistlib
 sys.path.insert(0, '/usr/local/munki')
 sys.path.insert(0, '/usr/local/munkireport')
 
-from Foundation import CFPreferencesCopyAppValue
+from Foundation import (CFPreferencesCopyValue,
+                        kCFPreferencesAnyUser,
+                        kCFPreferencesCurrentHost)
 
 # Agent binary locations — Iru (rebranded) takes precedence over legacy Kandji
 AGENT_BINARIES = [
@@ -33,24 +35,38 @@ def find_agent_binary():
     return None
 
 
+def get_pref(key):
+    """Read a preference key from the system-level preference domain.
+
+    The Iru (and modern Kandji) agent writes its preferences to
+    /Library/Preferences/io.kandji.Kandji.plist as root, which sits in the
+    kCFPreferencesAnyUser / kCFPreferencesCurrentHost scope.  The simpler
+    CFPreferencesCopyAppValue only checks the current-user scope and therefore
+    returns None for these keys even when the plist exists.
+    """
+    return CFPreferencesCopyValue(key, PREF_DOMAIN,
+                                  kCFPreferencesAnyUser,
+                                  kCFPreferencesCurrentHost)
+
+
 def get_local_kandji_prefs():
     result = dict()
 
     # Core fields — present in all agent versions
-    result['kandji_agent_version'] = CFPreferencesCopyAppValue('AgentVersion', PREF_DOMAIN)
-    result['blueprint_name'] = CFPreferencesCopyAppValue('Blueprint', PREF_DOMAIN)
+    result['kandji_agent_version'] = get_pref('AgentVersion')
+    result['blueprint_name'] = get_pref('Blueprint')
 
     # device_id — extracted from the ComputerURL path component
-    computer_url = CFPreferencesCopyAppValue('ComputerURL', PREF_DOMAIN)
+    computer_url = get_pref('ComputerURL')
     if computer_url is not None:
         result['device_id'] = computer_url.split('/')[-1]
     else:
         result['device_id'] = None
 
     # v3.0 — new fields exposed by Iru agent (also present on updated Kandji builds)
-    result['company'] = CFPreferencesCopyAppValue('Company', PREF_DOMAIN)
-    result['last_report'] = CFPreferencesCopyAppValue('LastReport', PREF_DOMAIN)
-    result['last_status'] = CFPreferencesCopyAppValue('LastStatus', PREF_DOMAIN)
+    result['company'] = get_pref('Company')
+    result['last_report'] = get_pref('LastReport')
+    result['last_status'] = get_pref('LastStatus')
 
     return result
 
