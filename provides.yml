@@ -1,0 +1,26 @@
+admin_pages:
+    admin:
+        view: iru_admin
+        i18n: iru.title
+client_tabs:
+    iru-tab:
+        view: iru_tab
+        i18n: iru.title
+detail_widgets:
+    iru_detail:
+        view: iru_detail_widget
+listings:
+    iru:
+        view: iru_listing
+        i18n: iru.title
+reports:
+    iru:
+        view: iru_report
+        i18n: iru.report
+widgets:
+    iru_agent_version:
+        view: iru_agent_version_widget
+    iru_checkin:
+        view: iru_checkin_widget
+    iru_passport:
+        view: iru_passport_widget

@@ -1,0 +1,8 @@
+type: scrollbox
+widget_id: iru_agent_version-widget
+api_url: /module/iru/get_iru_version
+i18n_title: iru.iru_agent_version
+icon: fa-arrows-alt
+listing_link: /show/listing/iru/iru
+search_key: iru_agent_version
+i18n_empty_result: no_data

@@ -1,0 +1,14 @@
+type: button
+widget_id: iru_passport-widget
+api_url: /module/iru/get_passport_stats
+i18n_title: iru.passport_stats
+icon: fa-key
+listing_link: /show/listing/iru/iru
+i18n_empty_result: no_data
+buttons:
+  - label: disabled
+    i18n_label: iru.disabled
+    class: btn-warning
+  - label: enabled
+    i18n_label: iru.enabled
+    class: btn-success

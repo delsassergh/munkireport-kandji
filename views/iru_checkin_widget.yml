@@ -1,0 +1,17 @@
+type: button
+widget_id: iru_checkin-widget
+api_url: /module/iru/get_last_checkin
+i18n_title: iru.last_check_in
+icon: fa-hand-peace-o
+listing_link: /show/listing/iru/iru
+i18n_empty_result: no_data
+buttons:
+  - label: red
+    i18n_label: iru.month
+    class: btn-danger
+  - label: yellow
+    i18n_label: iru.week
+    class: btn-warning
+  - label: green
+    i18n_label: iru.today
+    class: btn-success

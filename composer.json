@@ -1,0 +1,21 @@
+{
+    "name": "delsassergh/iru",
+    "description": "Iru (formerly Kandji) module for munkireport. Continuation of jc0b/kandji.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "delsassergh",
+            "role": "Maintainer"
+        },
+        {
+            "name": "jc0b",
+            "role": "Original Kandji module author"
+        }
+    ],
+    "keywords": [
+        "munkireport",
+        "iru",
+        "kandji",
+        "mdm"
+    ]
+}
